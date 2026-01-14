@@ -22,7 +22,7 @@
             $stmt = $pdo->prepare("UPDATE users SET reset_token_hash = ?, reset_token_expires_at = ? WHERE email = ?");
             $stmt->execute([$hash, $expiry, $email]);
 
-            // For testing in VS Code, we show the link on screen:
+            
             echo "<div class='message' style='color:green;'>Link sent! <br><a href='reset_password.php?token=$token'>Simulate Email Link</a></div>";
         }
         ?>
