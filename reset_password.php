@@ -23,7 +23,7 @@ if (isset($_GET['token'])) {
         $stmt = $pdo->prepare("UPDATE users SET password_hash = ?, reset_token_hash = NULL, reset_token_expires_at = NULL WHERE id = ?");
         $stmt->execute([$new_password, $user['id']]);
 
-        // PROFESSIONAL SUCCESS MESSAGE
+        // SUCCESS MESSAGE
         echo "<!DOCTYPE html>
         <html lang='en'>
         <head>

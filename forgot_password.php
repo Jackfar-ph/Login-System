@@ -22,7 +22,6 @@
             $stmt = $pdo->prepare("UPDATE users SET reset_token_hash = ?, reset_token_expires_at = ? WHERE email = ?");
             $stmt->execute([$hash, $expiry, $email]);
 
-<<<<<<< HEAD
             // Only show the simulated link when a row was updated (email exists).
             if ($stmt->rowCount() > 0) {
                 echo "<div class='message' style='color:green;'>Link sent! <br><a href='reset_password.php?token=$token'>Simulate Email Link</a></div>";
@@ -31,10 +30,6 @@
                 echo "<div class='message' style='color:green;'>If that email exists, a reset link has been sent.</div>";
                 error_log("forgot_password: attempted reset for non-existent email: $email");
             }
-=======
-            
-            echo "<div class='message' style='color:green;'>Link sent! <br><a href='reset_password.php?token=$token'>Simulate Email Link</a></div>";
->>>>>>> 1781b3381007c7ba6d3619d676acc985bde4fcaf
         }
         ?>
 
